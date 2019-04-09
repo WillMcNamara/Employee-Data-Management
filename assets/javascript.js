@@ -25,22 +25,38 @@ var database = firebase.database();
 function addRow() {
 
 }
+$( document ).ready(function() {
 
-$("#submit").on("click", function(event) {
+    $("#submit").on("click", function(event) {
     event.preventDefault();
+    console.log(this);
 
     var employeeName = $("#name-input").val();
     var employeeDate = $("#date-input").val();
     var employeeRole = $("#role-input").val();
     var employeeRate = $("#rate-input").val();
 
-    $("#employees").append("<tr><td>"+ employeeName + "</td><td>" + employeeRate + "</td><td>" + employeeDate + "</td><td>" + employeeRole + "</td><td>" + "months worked" + "</td><td>" + "months billed" + "</td></tr>")
+    var newEmployee = {
+        name: employeeName,
+        date: employeeDate,
+        role: employeeRole,
+        rate: employeeRate,
+        dateAdded: firebase.database.ServerValue.TIMESTAMP
+    }
 
     console.log(employeeDate);
     console.log(employeeRate);
 
-    // database.ref("/names").push(employeeName);
-    // database.ref("/dates").push(employeeDate);
-    // database.ref("/role").push(employeeRole);
-    // database.ref("/rate").push(employeeRate);
+    database.ref().push(newEmployee);
+
+     $("#name-input").val("");
+     $("#date-input").val("");
+     $("#role-input").val("");
+     $("#rate-input").val("");
+})
+
+database.ref().on("child_added", function(childSnapshot) {
+    console.log(childSnapshot.val());
+
+})
 })
