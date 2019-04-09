@@ -52,10 +52,27 @@ $(document).ready(function() {
      $("#rate-input").val("");
 })
 
-// database.ref().on("child_added", function(childSnapshot) {
-//     console.log(childSnapshot.val());
+database.ref().on("child_added", function(childSnapshot) {
+    console.log(childSnapshot.val());
 
-//     var everything = childSnapshot.val();
-//     console.log(everything);
-// })
+    var sv = childSnapshot.val();
+    
+    var newName = sv.name;
+    var newRole = sv.role;
+    var newRate = sv.rate;
+    var newDate = sv.date; 
+
+    var newRow = $("<tr>");
+    newRow.prepend("<td>" + newName + "</td>");
+    newRow.prepend("<td>" + newRole + "</td>");
+    newRow.prepend("<td>" + newDate + "</td>");
+    newRow.prepend("<td>" + "months" + "</td>");
+    newRow.prepend("<td>" + newRate + "</td>");
+    newRow.prepend("<td>" + "billed" + "</td>");
+    console.log(newRow);
+
+
+    $("#employees").append(newRow);
+    console.log($("#employees"))
+})
 })
