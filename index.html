@@ -7,8 +7,15 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/style.css">
     <title>Train Scheduler</title>
+        <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.3/firebase.js"></script>
+    <script src="assets/javascript.js"></script>
   </head>
   <body>
     <div class="container mb-5">
@@ -37,7 +44,7 @@
                               <th scope="col">Total Billed($)</th>
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody id="#employees">
                             <tr>
                                 <th scope="row">1</th>
                                 <td>Mark</td>
@@ -62,23 +69,27 @@
                     </div>
                     <div class="col py-3">
                     <form>
-                        <div class="form-group ">
-                            <label for="trainName">Employee Name</label>
-                            <input type="text" class="form-control" id="trainName" placeholder="Jane Doe">
+                        <div class="form-group">
+                            <label for="name-input">Employee Name</label>
+                            <input type="text" class="form-control" id="name-input" placeholder="Jane Doe">
                         </div>
                         <div class="form-group">
-                            <label for="destination">Role</label>
-                            <input type="text" class="form-control" id="destination" placeholder="CEO">
+                            <label for="role-input">Role</label>
+                            <input type="text" class="form-control" id="role-input" placeholder="CEO">
                         </div>
                         <div class="form-group">
-                            <label for="firstTrain">Start Date (MM/DD/YYYY)</label>
-                            <input type="date" class="form-control" id="firstTrain" placeholder="(MM/DD/YYYY)">
+                            <label for="date-input">Start Date (MM/DD/YYYY)</label>
+                            <input type="date" class="form-control" id="date-input" placeholder="(MM/DD/YYYY)">
                         </div>
                         <div class="form-group">
-                            <label for="frequency">Monthly Rate</label>
-                            <input type="number" class="form-control" id="frequency" placeholder="$">
+                            <label for="rate-input">Monthly Rate</label>
+                            <input type="number" class="form-control" id="rate-input" placeholder="$">
                         </div>
+<<<<<<< HEAD
                         <button type="submit" class="btn btn-primary float-right">Submit</button>
+=======
+                        <button type="submit" id="submit" class="btn btn-primary">Submit</button>
+>>>>>>> 52ab331c354a79803a61c23cdbbde07555a8ba42
                         </form>
                     </div>
                 </div>
@@ -87,12 +98,5 @@
         </div>
 
     </div>
-
-   
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   </body>
 </html>
