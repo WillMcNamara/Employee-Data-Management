@@ -22,10 +22,7 @@
 
 var database = firebase.database();
 
-function addRow() {
-
-}
-$( document ).ready(function() {
+$(document).ready(function() {
 
     $("#submit").on("click", function(event) {
     event.preventDefault();
@@ -55,8 +52,10 @@ $( document ).ready(function() {
      $("#rate-input").val("");
 })
 
-database.ref().on("child_added", function(childSnapshot) {
-    console.log(childSnapshot.val());
+// database.ref().on("child_added", function(childSnapshot) {
+//     console.log(childSnapshot.val());
 
-})
+//     var everything = childSnapshot.val();
+//     console.log(everything);
+// })
 })
