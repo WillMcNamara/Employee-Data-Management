@@ -60,7 +60,11 @@ database.ref().on("child_added", function(childSnapshot) {
     var newName = sv.name;
     var newRole = sv.role;
     var newRate = sv.rate;
-    var newDate = sv.date; 
+
+    var newDate = sv.date;
+    
+    // var months = diff(sv.date);
+    // var billed = sv.rate*(months);
 
     var newRow = $("<tr>");
     newRow.append("<td>" + newName + "</td>");
