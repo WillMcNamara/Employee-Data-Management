@@ -63,6 +63,7 @@ database.ref().on("child_added", function(childSnapshot) {
 
     var newDate = sv.date;
     
+    // var moment = moment(newDate, "YYYY-MM-DD").format('MM')
     // var months = diff(sv.date);
     // var billed = sv.rate*(months);
 
