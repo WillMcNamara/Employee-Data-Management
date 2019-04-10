@@ -63,17 +63,23 @@ database.ref().on("child_added", function(childSnapshot) {
 
     var newDate = sv.date;
     
-    // var moment = moment(newDate, "YYYY-MM-DD").format('MM')
-    // var months = diff(sv.date);
-    // var billed = sv.rate*(months);
+    var inputYear = parseInt(moment(newDate, "YYYY-MM-DD").format("YYYY"));
+    var inputMonth = parseInt(moment(newDate, "YYYY-MM-DD").format("MM"));
+
+    var currentYear = parseInt(moment().format('YYYY'));
+    var currentMonth = parseInt(moment().format("MM"));
+
+    var months = (currentYear - inputYear)*12 + (currentMonth - inputMonth);
+
+    var billed = months*(parseInt(newRate));
 
     var newRow = $("<tr>");
     newRow.append("<td>" + newName + "</td>");
     newRow.append("<td>" + newRole + "</td>");
     newRow.append("<td>" + newDate + "</td>");
-    newRow.append("<td>" + "months" + "</td>");
+    newRow.append("<td>" + months + "</td>");
     newRow.append("<td>" + newRate + "</td>");
-    newRow.append("<td>" + "billed" + "</td>");
+    newRow.append("<td>" + billed + "</td>");
     console.log(newRow);
 
 
