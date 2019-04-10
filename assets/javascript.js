@@ -77,7 +77,7 @@ database.ref().on("child_added", function(childSnapshot) {
     console.log(newRow);
 
 
-    $("#employees").append(newRow);
+    $("tbody").append(newRow);
     console.log($("#employees"));
    
 })
