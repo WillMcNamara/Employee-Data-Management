@@ -63,16 +63,17 @@ database.ref().on("child_added", function(childSnapshot) {
     var newDate = sv.date; 
 
     var newRow = $("<tr>");
-    newRow.prepend("<td>" + newName + "</td>");
-    newRow.prepend("<td>" + newRole + "</td>");
-    newRow.prepend("<td>" + newDate + "</td>");
-    newRow.prepend("<td>" + "months" + "</td>");
-    newRow.prepend("<td>" + newRate + "</td>");
-    newRow.prepend("<td>" + "billed" + "</td>");
+    newRow.append("<td>" + newName + "</td>");
+    newRow.append("<td>" + newRole + "</td>");
+    newRow.append("<td>" + newDate + "</td>");
+    newRow.append("<td>" + "months" + "</td>");
+    newRow.append("<td>" + newRate + "</td>");
+    newRow.append("<td>" + "billed" + "</td>");
     console.log(newRow);
 
 
     $("#employees").append(newRow);
-    console.log($("#employees"))
+    console.log($("#employees"));
+   
 })
 })
