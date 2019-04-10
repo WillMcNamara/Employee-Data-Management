@@ -68,7 +68,7 @@ database.ref().on("child_added", function(childSnapshot) {
     // var billed = sv.rate*(months);
 
     var newRow = $("<tr>");
-    newRow.append("<td scope='row'>" + newName + "</td>");
+    newRow.append("<td>" + newName + "</td>");
     newRow.append("<td>" + newRole + "</td>");
     newRow.append("<td>" + newDate + "</td>");
     newRow.append("<td>" + "months" + "</td>");
@@ -77,7 +77,8 @@ database.ref().on("child_added", function(childSnapshot) {
     console.log(newRow);
 
 
-    $("tbody").append(newRow);
-    console.log($("#employees"))
+    $("#employees").append(newRow);
+    console.log($("#employees"));
+   
 })
 })
